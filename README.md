@@ -1,6 +1,6 @@
 # Overview
 
-A peer to peer gambling app.
+A peer to peer networking app.
 
 ## Screens
 
