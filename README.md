@@ -2,6 +2,12 @@
 
 A peer to peer gambling app.
 
+## Screens
+
+![Login Screen](/images/login-screen.png)
+
+![Sign Up Screen](/images/sign-up-screen.png)
+
 ## Running the application
 
 1. Download and install [Flutter.](https://docs.flutter.dev/get-started/install)
