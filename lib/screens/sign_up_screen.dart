@@ -12,64 +12,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _formKey = GlobalKey<FormState>();
 
   // Editing controllers
-  final firstNameEditingController = new TextEditingController();
-  final lastNameEditingController = new TextEditingController();
-  final emailEditingController = new TextEditingController();
+  // final firstNameEditingController = new TextEditingController();
+  // final lastNameEditingController = new TextEditingController();
+  // final emailEditingController = new TextEditingController();
+  final usernameEditingController = new TextEditingController();
   final passwordEditingController = new TextEditingController();
   final confirmPasswordEditingController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    // First name field
-    final firstNameField = TextFormField(
+    // Username field
+    final usernameField = TextFormField(
       autofocus: false,
-      controller: firstNameEditingController,
+      controller: usernameEditingController,
       // vaidator: () {},
       onSaved: (value) {
-        firstNameEditingController.text = value!;
+        usernameEditingController.text = value!;
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
+          prefixIcon: Icon(Icons.person),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "First Name",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          )),
-    );
-
-    // Last name field
-    final lastNameField = TextFormField(
-      autofocus: false,
-      controller: lastNameEditingController,
-      // vaidator: () {},
-      onSaved: (value) {
-        lastNameEditingController.text = value!;
-      },
-      textInputAction: TextInputAction.next,
-      decoration: InputDecoration(
-          prefixIcon: Icon(Icons.account_circle),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Last Name",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          )),
-    );
-
-    // Email field
-    final emailField = TextFormField(
-      autofocus: false,
-      controller: emailEditingController,
-      keyboardType: TextInputType.emailAddress,
-      // vaidator: () {},
-      onSaved: (value) {
-        emailEditingController.text = value!;
-      },
-      textInputAction: TextInputAction.next,
-      decoration: InputDecoration(
-          prefixIcon: Icon(Icons.mail),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Email",
+          hintText: "Username",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
           )),
@@ -151,7 +115,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: Container(
           color: Colors.white,
           child: Padding(
-            padding: const EdgeInsets.all(36.0),
+            padding: const EdgeInsets.fromLTRB(36, 0, 36, 36),
             child: Form(
                 key: _formKey,
                 child: Column(
@@ -165,11 +129,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         fit: BoxFit.contain,
                       ),
                     ),
-                    firstNameField,
-                    const SizedBox(height: 15),
-                    lastNameField,
-                    const SizedBox(height: 15),
-                    emailField,
+                    // firstNameField,
+                    // const SizedBox(height: 15),
+                    // lastNameField,
+                    usernameField,
                     const SizedBox(height: 15),
                     passwordField,
                     const SizedBox(height: 15),

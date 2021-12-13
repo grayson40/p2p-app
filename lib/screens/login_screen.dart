@@ -13,25 +13,24 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
 
   // Editing controller
-  final TextEditingController emailController = new TextEditingController();
+  final TextEditingController usernameController = new TextEditingController();
   final TextEditingController passwordController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    // Email field
-    final emailField = TextFormField(
+    // Username field
+    final usernameField = TextFormField(
       autofocus: false,
-      controller: emailController,
-      keyboardType: TextInputType.emailAddress,
+      controller: usernameController,
       // vaidator: () {},
       onSaved: (value) {
-        emailController.text = value!;
+        usernameController.text = value!;
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.mail),
+          prefixIcon: Icon(Icons.person),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Email",
+          hintText: "Username",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
           )),
@@ -81,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Container(
           color: Colors.white,
           child: Padding(
-            padding: const EdgeInsets.all(36.0),
+            padding: const EdgeInsets.fromLTRB(36, 0, 36, 36),
             child: Form(
                 key: _formKey,
                 child: Column(
@@ -95,12 +94,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         fit: BoxFit.contain,
                       ),
                     ),
-                    emailField,
+                    usernameField,
                     const SizedBox(height: 20),
                     passwordField,
                     const SizedBox(height: 20),
                     loginButton,
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 15),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
