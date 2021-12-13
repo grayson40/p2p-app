@@ -4,9 +4,9 @@ A peer to peer gambling app.
 
 ## Screens
 
-![Login Screen](/images/login-screen.png)
+![alt text](https://github.com/grayson40/p2p-app/blob/master/images/login-screen.PNG?raw=true)
 
-![Sign Up Screen](/images/sign-up-screen.png)
+![alt text](https://github.com/grayson40/p2p-app/blob/master/images/sign-up-screen.PNG?raw=true)
 
 ## Running the application
 
