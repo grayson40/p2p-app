@@ -90,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
         onPressed: () {
           signIn(emailController.text, passwordController.text);
         },
-        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         child: const Text(
           "Login",
@@ -102,11 +102,11 @@ class _LoginScreenState extends State<LoginScreen> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       body: Center(
           child: SingleChildScrollView(
         child: Container(
-          color: Colors.white,
+          // color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(36, 0, 36, 36),
             child: Form(

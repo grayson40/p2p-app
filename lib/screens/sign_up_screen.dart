@@ -156,7 +156,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -173,7 +173,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       body: Center(
           child: SingleChildScrollView(
         child: Container(
-          color: Colors.white,
+          // color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(36, 0, 36, 36),
             child: Form(
