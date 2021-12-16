@@ -1,8 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:p2p_app/models/user_model.dart';
-import 'package:p2p_app/screens/login_screen.dart';
 import 'package:p2p_app/screens/home_screen.dart';
 import 'package:p2p_app/screens/notes_screen.dart';
 import 'package:p2p_app/screens/profile_screen.dart';
@@ -18,29 +14,12 @@ class _NavState extends State<Nav> {
   // Selected index of bottom nav bar
   int _selectedIndex = 0;
 
-  // Create an instance of firebase current user. Instantiate user model.
-  User? user = FirebaseAuth.instance.currentUser;
-  UserModel loggedInUser = UserModel();
-
   // Create a list of widgets for nav bar screens
   final List<Widget> screenList = <Widget>[
     const HomeScreen(),
     const NotesScreen(),
     const ProfileScreen(),
   ];
-
-  @override
-  void initState() {
-    super.initState();
-    FirebaseFirestore.instance
-        .collection("users")
-        .doc(user!.uid)
-        .get()
-        .then((value) {
-      loggedInUser = UserModel.fromMap(value.data());
-      setState(() {});
-    });
-  }
 
   // Grab selected index of navbar when pressed
   void _onItemTap(int index) {
