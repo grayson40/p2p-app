@@ -20,10 +20,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _auth = FirebaseAuth.instance;
 
   // Editing controllers
-  final emailEditingController = new TextEditingController();
-  final usernameEditingController = new TextEditingController();
-  final passwordEditingController = new TextEditingController();
-  final confirmPasswordEditingController = new TextEditingController();
+  final emailEditingController = TextEditingController();
+  final usernameEditingController = TextEditingController();
+  final passwordEditingController = TextEditingController();
+  final confirmPasswordEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +33,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
       controller: emailEditingController,
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
+        // reg expression for email validation
+        RegExp regex = RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]");
         if (value!.isEmpty) {
           return ("Email cannot be empty");
         }
-        // reg expression for email validation
-        if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
+        if (!regex.hasMatch(value)) {
           return ("Please enter valid email");
         }
         return null;
@@ -47,8 +48,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.mail),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          prefixIcon: const Icon(Icons.mail),
+          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Email",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
@@ -60,7 +61,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       autofocus: false,
       controller: usernameEditingController,
       validator: (value) {
-        RegExp regex = new RegExp(r'^.{3,}$');
+        // reg expression for password validation
+        RegExp regex = RegExp(r'^.{3,}$');
         if (value!.isEmpty) {
           return ("Username cannot be empty");
         }
@@ -73,8 +75,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.person),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          prefixIcon: const Icon(Icons.person),
+          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Username",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
@@ -87,7 +89,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       controller: passwordEditingController,
       obscureText: true,
       validator: (value) {
-        RegExp regex = new RegExp(r'^.{6,}$');
+        RegExp regex = RegExp(r'^.{6,}$');
         if (value!.isEmpty) {
           return ("Password cannot be empty");
         }
@@ -100,8 +102,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.lock),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          prefixIcon: const Icon(Icons.lock),
+          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Password",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
@@ -125,8 +127,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       },
       textInputAction: TextInputAction.done,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.lock),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          prefixIcon: const Icon(Icons.lock),
+          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           hintText: "Confirm Password",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
@@ -142,7 +144,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         onPressed: () {
           signUp(emailEditingController.text, passwordEditingController.text);
         },
-        padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         child: const Text(
           "Sign Up",
@@ -204,6 +206,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
+  // This async method takes an email and password as parameters.
+  // If the form key is valid, create a user with the parameters provided.
+  // An async method is then called to post the user data to firestore.
   void signUp(String email, String password) async {
     if (_formKey.currentState!.validate()) {
       await _auth
@@ -215,13 +220,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
         Fluttertoast.showToast(msg: e!.message);
       });
     }
-  }
+  } // singUp()
 
+  // This async method calls and creates an instance of our firestore.
+  // The user model is instantiated to store the user data.
+  // The user model is sent to firestore using the map function,
+  // and the user is navigated to the home screen.
   postDetailsToFirestore() async {
-    // Calling our firestore
-    // Calling our user model
-    // Sending values
-
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     User? user = _auth.currentUser;
 
@@ -237,11 +242,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
         .doc(user.uid)
         .set(userModel.toMap());
 
-    Fluttertoast.showToast(msg: "Account created successfully!");
+    Fluttertoast.showToast(msg: "User created successfully!");
 
     Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
         (route) => false);
   }
 }

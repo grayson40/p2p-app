@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
         .doc(user!.uid)
         .get()
         .then((value) {
-      this.loggedInUser = UserModel.fromMap(value.data());
+      loggedInUser = UserModel.fromMap(value.data());
       setState(() {});
     });
   }
@@ -44,6 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> logout(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
     Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => LoginScreen()));
+        MaterialPageRoute(builder: (context) => const LoginScreen()));
   } // logout()
 }

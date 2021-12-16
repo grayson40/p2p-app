@@ -15,9 +15,9 @@ class _LoginScreenState extends State<LoginScreen> {
   // Form key
   final _formKey = GlobalKey<FormState>();
 
-  // Editing controller
-  final TextEditingController emailController = new TextEditingController();
-  final TextEditingController passwordController = new TextEditingController();
+  // Editing controllers
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   // Firebase auth
   final _auth = FirebaseAuth.instance;
@@ -25,16 +25,17 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     // Email field
-    final usernameField = TextFormField(
+    final emailField = TextFormField(
       autofocus: false,
       controller: emailController,
       keyboardType: TextInputType.emailAddress,
       validator: (value) {
+        // reg expression for email validation
+        RegExp regex = RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]");
         if (value!.isEmpty) {
           return ("Please enter your email");
         }
-        // reg expression for email validation
-        if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
+        if (!regex.hasMatch(value)) {
           return ("Please enter valid email");
         }
         return null;
@@ -58,7 +59,8 @@ class _LoginScreenState extends State<LoginScreen> {
       controller: passwordController,
       obscureText: true,
       validator: (value) {
-        RegExp regex = new RegExp(r'^.{6,}$');
+        // reg expression for passwowrd validation
+        RegExp regex = RegExp(r'^.{6,}$');
         if (value!.isEmpty) {
           return ("Password is required for login");
         }
@@ -120,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         fit: BoxFit.contain,
                       ),
                     ),
-                    usernameField,
+                    emailField,
                     const SizedBox(height: 20),
                     passwordField,
                     const SizedBox(height: 20),
@@ -135,7 +137,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => SignUpScreen()));
+                                    builder: (context) =>
+                                        const SignUpScreen()));
                           },
                           child: const Text(
                             "Sign Up",
@@ -155,18 +158,22 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
+  // This async method takes email and password as parameters.
+  // If the form key is valid, sign in user with firebase auth
+  // and navigate to the home screen.
   void signIn(String email, String password) async {
     if (_formKey.currentState!.validate()) {
       await _auth
           .signInWithEmailAndPassword(email: email, password: password)
           .then((uid) => {
                 Fluttertoast.showToast(msg: "Login successful!"),
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => HomeScreen())),
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => const HomeScreen())),
               })
           .catchError((e) {
         Fluttertoast.showToast(msg: e!.message);
       });
     }
   } //signIn()
+
 }
