@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:p2p_app/screens/login_screen.dart';
 import 'package:p2p_app/models/user_model.dart';
+import 'package:p2p_app/screens/nav_screen.dart';
+import 'package:p2p_app/screens/settings_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -33,6 +35,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.red,
+          ),
+          onPressed: () {
+            // Navigator.of(context).pushReplacement(
+            //     MaterialPageRoute(builder: (context) => const Nav()));
+            Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => const Nav()));
+          },
+        ),
+        flexibleSpace: IconButton(
+          padding: EdgeInsets.fromLTRB(40, 40, 20, 40),
+          alignment: Alignment.centerRight,
+          icon: const Icon(
+            Icons.settings,
+            color: Colors.red,
+          ),
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const SettingsScreen()));
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -87,7 +113,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
           logout(context);
         },
         backgroundColor: Colors.redAccent,
-        child: const Icon(Icons.logout),
+        child: const Icon(
+          Icons.logout,
+          color: Colors.white,
+        ),
       ),
     );
   }
