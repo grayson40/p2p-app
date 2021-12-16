@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:p2p_app/models/user_model.dart';
-import 'home_screen.dart';
+import 'nav_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -244,9 +244,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     Fluttertoast.showToast(msg: "User created successfully!");
 
-    Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-        (route) => false);
+    Navigator.pushAndRemoveUntil(context,
+        MaterialPageRoute(builder: (context) => const Nav()), (route) => false);
   }
 }
