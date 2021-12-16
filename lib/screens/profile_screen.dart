@@ -65,10 +65,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        print('followers tapped');
+                        print('wins tapped');
                       },
                       child: const Text(
-                        "Followers: ",
+                        "Wins: ",
                         style: TextStyle(
                             color: Colors.grey,
                             fontWeight: FontWeight.w500,
@@ -91,10 +91,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        print('following tapped');
+                        print('losses tapped');
                       },
                       child: const Text(
-                        "Following: ",
+                        "Losses: ",
                         style: TextStyle(
                             color: Colors.grey,
                             fontWeight: FontWeight.w500,
