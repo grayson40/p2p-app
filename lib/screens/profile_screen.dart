@@ -35,18 +35,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.red,
-          ),
-          onPressed: () {
-            // Navigator.of(context).pushReplacement(
-            //     MaterialPageRoute(builder: (context) => const Nav()));
-            Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => const Nav()));
-          },
-        ),
         flexibleSpace: IconButton(
           padding: EdgeInsets.fromLTRB(40, 40, 20, 40),
           alignment: Alignment.centerRight,
@@ -67,8 +55,65 @@ class _ProfileScreenState extends State<ProfileScreen> {
               backgroundColor: Colors.redAccent,
               radius: 70,
             ),
+            const SizedBox(
+              height: 25,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        print('followers tapped');
+                      },
+                      child: const Text(
+                        "Followers: ",
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 2,
+                    ),
+                    const Text(
+                      "0",
+                      style: TextStyle(fontSize: 20, color: Colors.grey),
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  width: 30,
+                ),
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        print('following tapped');
+                      },
+                      child: const Text(
+                        "Following: ",
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 2,
+                    ),
+                    const Text(
+                      "0",
+                      style: TextStyle(fontSize: 20, color: Colors.grey),
+                    ),
+                  ],
+                ),
+              ],
+            ),
             const Divider(
-              height: 100,
+              height: 70,
               thickness: 2,
             ),
             Padding(
