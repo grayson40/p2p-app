@@ -36,14 +36,31 @@ class _NavState extends State<Nav> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
           BottomNavigationBarItem(
-              icon: Icon(Icons.notes_rounded), title: Text("Notes")),
+            icon: Icon(Icons.home),
+            title: Text(
+              "Home",
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+            ),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person), title: Text("Account"))
+              icon: Icon(Icons.notes_rounded),
+              title: Text(
+                "Notes",
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+              )),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+              ),
+              title: Text(
+                "Account",
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+              ))
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTap,
+        selectedItemColor: Colors.redAccent,
       ),
     );
   }
