@@ -30,8 +30,57 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Hello ${loggedInUser.username.toString()}!'),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const CircleAvatar(
+              backgroundColor: Colors.redAccent,
+              radius: 70,
+            ),
+            const Divider(
+              height: 100,
+              thickness: 2,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.person),
+                      const SizedBox(width: 10),
+                      Text(
+                        loggedInUser.username.toString(),
+                        style: const TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    children: [
+                      const Icon(Icons.email),
+                      const SizedBox(width: 10),
+                      Text(
+                        loggedInUser.email.toString(),
+                        style: const TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
