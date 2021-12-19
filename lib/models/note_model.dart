@@ -1,14 +1,14 @@
 class NoteModel {
-  String? noteId;
   String? note;
+  String? uid;
 
-  NoteModel({this.noteId, this.note});
+  NoteModel({this.note, this.uid});
 
   factory NoteModel.fromMap(map) {
-    return NoteModel(noteId: map['nid'], note: map['notes']);
+    return NoteModel(note: map['note'], uid: map['uid']);
   }
 
   Map<String, dynamic> toMap() {
-    return {'nid': noteId, 'note': note};
+    return {'note': note, 'uid': uid};
   }
 }
