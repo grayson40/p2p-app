@@ -47,10 +47,9 @@ git clone [URL]
 ```
 flutter doctor
 ```
-
-    - This command will show you a list of all of the needed dependecies to run the Flutter project.
-    - The "doctor" will show you if you have satisfied all of the requirements and if not, will provide instructions on how to install the needed dependencies.
-    - This command will also download the [Dart SDK](https://dart.dev/get-dart) which is the language used to code a Flutter project.
+- This command will show you a list of all of the needed dependecies to run the Flutter project.
+- The "doctor" will show you if you have satisfied all of the requirements and if not, will provide instructions on how to install the needed dependencies.
+- This command will also download the [Dart SDK](https://dart.dev/get-dart) which is the language used to code a Flutter project.
 5. Open an instance of Android Studio.
 6. Click on `More Actions` dropdown and open the AVD Manager.
 7. Click on the `Create Virtual Device` button. 
@@ -61,12 +60,10 @@ flutter doctor
 ```
 flutter devices
 ```
-
-    - This command will show you a list of all devices capable of running the Flutter project.
-    - You should see your virtual device listed.
+- This command will show you a list of all devices capable of running the Flutter project.
+- You should see your virtual device listed.
 11. In the same command prompt, execute the command:
 ```
 flutter run
 ```
-
-    - After about a minute of loading, the Flutter project will run on your virtual device!
+- After about a minute of loading, the Flutter project will run on your virtual device!
