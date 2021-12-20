@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.redAccent,
+      color: Colors.green,
       child: MaterialButton(
         onPressed: () {
           signIn(emailController.text, passwordController.text);
@@ -143,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: const Text(
                             "Sign Up",
                             style: TextStyle(
-                                color: Colors.redAccent,
+                                color: Colors.green,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15),
                           ),

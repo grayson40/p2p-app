@@ -139,7 +139,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final singUpButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.redAccent,
+      color: Colors.green,
       child: MaterialButton(
         onPressed: () {
           signUp(emailEditingController.text, passwordEditingController.text);

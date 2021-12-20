@@ -60,7 +60,7 @@ class _NavState extends State<Nav> {
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTap,
-        selectedItemColor: Colors.redAccent,
+        selectedItemColor: Colors.green,
       ),
     );
   }

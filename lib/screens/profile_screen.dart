@@ -35,12 +35,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        flexibleSpace: IconButton(
-          padding: EdgeInsets.fromLTRB(40, 40, 20, 40),
-          alignment: Alignment.centerRight,
+        leading: IconButton(
+          alignment: Alignment.topRight,
           icon: const Icon(
             Icons.settings,
-            color: Colors.red,
+            color: Colors.green,
           ),
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(
@@ -52,7 +51,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           children: [
             const CircleAvatar(
-              backgroundColor: Colors.redAccent,
+              backgroundColor: Colors.grey,
               radius: 70,
             ),
             const SizedBox(
@@ -157,7 +156,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         onPressed: () {
           logout(context);
         },
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.green,
         child: const Icon(
           Icons.logout,
           color: Colors.white,

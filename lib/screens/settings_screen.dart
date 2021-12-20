@@ -15,9 +15,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
+          alignment: Alignment.topRight,
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.red,
+            color: Colors.green,
           ),
           onPressed: () {
             Navigator.of(context).pop();

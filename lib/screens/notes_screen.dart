@@ -32,6 +32,7 @@ class _NotesScreenState extends State<NotesScreen> {
       },
       textInputAction: TextInputAction.done,
       decoration: InputDecoration(
+          hintText: "Type note here...",
           contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
@@ -57,7 +58,7 @@ class _NotesScreenState extends State<NotesScreen> {
           Icons.add,
           color: Colors.white,
         ),
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.green,
       ),
     );
   }
