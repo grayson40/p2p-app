@@ -163,7 +163,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.red,
+            color: Colors.green,
           ),
           onPressed: () {
             Navigator.of(context).pop();
