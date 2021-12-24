@@ -163,7 +163,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.red,
+            color: Colors.green,
           ),
           onPressed: () {
             Navigator.of(context).pop();
@@ -182,11 +182,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
-                      height: 200,
-                      child: Image.asset(
-                        "assets/samurai.png",
-                        fit: BoxFit.contain,
+                    const SizedBox(
+                      height: 150,
+                      child: Icon(
+                        Icons.align_horizontal_center,
+                        color: Colors.green,
+                        size: 70,
                       ),
                     ),
                     emailField,
