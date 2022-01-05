@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:p2p_app/main.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -8,6 +9,11 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  // TO-DO
+  // Add a floating icon button which will toggle between ight/dark mode
+  // Add change/reset password setting
+  // Add change email setting
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +33,24 @@ class _SettingsScreenState extends State<SettingsScreen> {
       ),
       body: const Center(
         child: Text('Settings'),
+      ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 55),
+        child: FloatingActionButton(
+          backgroundColor: Colors.green,
+          child: Icon(
+            MyApp.themeNotifier.value == ThemeMode.light
+                ? Icons.dark_mode
+                : Icons.light_mode,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            MyApp.themeNotifier.value =
+                MyApp.themeNotifier.value == ThemeMode.light
+                    ? ThemeMode.dark
+                    : ThemeMode.light;
+          },
+        ),
       ),
     );
   }

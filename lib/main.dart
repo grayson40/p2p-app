@@ -13,17 +13,22 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
+  static final ValueNotifier<ThemeMode> themeNotifier =
+      ValueNotifier(ThemeMode.light);
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'My App',
-      theme: ThemeData.dark(
-          // primarySwatch: Colors.red,
-          ),
-      home: const LoginScreen(),
-    );
+    return ValueListenableBuilder<ThemeMode>(
+        valueListenable: themeNotifier,
+        builder: (_, ThemeMode currentMode, __) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'P2P App',
+            theme: ThemeData(primarySwatch: Colors.green),
+            darkTheme: ThemeData.dark(),
+            themeMode: currentMode,
+            home: const LoginScreen(),
+          );
+        });
   }
 }
