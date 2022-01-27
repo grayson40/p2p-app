@@ -10,9 +10,18 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
   // TO-DO
-  // Add a floating icon button which will toggle between ight/dark mode
+  // Add a floating icon button which will toggle between light/dark mode
   // Add change/reset password setting
   // Add change email setting
+
+  // Set the theme based off button toggle
+  void _setTheme() {
+    setState(() {
+      MyApp.themeNotifier.value = MyApp.themeNotifier.value == ThemeMode.light
+          ? ThemeMode.dark
+          : ThemeMode.light;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,10 +54,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             color: Colors.white,
           ),
           onPressed: () {
-            MyApp.themeNotifier.value =
-                MyApp.themeNotifier.value == ThemeMode.light
-                    ? ThemeMode.dark
-                    : ThemeMode.light;
+            _setTheme();
           },
         ),
       ),
