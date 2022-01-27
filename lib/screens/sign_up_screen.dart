@@ -48,12 +48,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.mail),
-          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Email",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          )),
+        prefixIcon: const Icon(Icons.mail),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        hintText: "Email",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
     );
 
     // Username field
@@ -75,12 +76,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.person),
-          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Username",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          )),
+        prefixIcon: const Icon(Icons.person),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        hintText: "Username",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
     );
 
     // Password field
@@ -102,12 +104,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.lock),
-          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Password",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          )),
+        prefixIcon: const Icon(Icons.lock),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        hintText: "Password",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
     );
 
     // Confirm password field
@@ -127,12 +130,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
       },
       textInputAction: TextInputAction.done,
       decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.lock),
-          contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Confirm Password",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          )),
+        prefixIcon: const Icon(Icons.lock),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+        hintText: "Confirm Password",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
     );
 
     // Sign up button
@@ -177,30 +181,31 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Padding(
             padding: const EdgeInsets.fromLTRB(36, 0, 36, 36),
             child: Form(
-                key: _formKey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    const SizedBox(
-                      height: 150,
-                      child: Icon(
-                        Icons.align_horizontal_center,
-                        color: Colors.green,
-                        size: 70,
-                      ),
+              key: _formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  const SizedBox(
+                    height: 150,
+                    child: Icon(
+                      Icons.align_horizontal_center,
+                      color: Colors.green,
+                      size: 70,
                     ),
-                    emailField,
-                    const SizedBox(height: 15),
-                    usernameField,
-                    const SizedBox(height: 15),
-                    passwordField,
-                    const SizedBox(height: 15),
-                    confirmPasswordField,
-                    const SizedBox(height: 20),
-                    singUpButton
-                  ],
-                )),
+                  ),
+                  emailField,
+                  const SizedBox(height: 15),
+                  usernameField,
+                  const SizedBox(height: 15),
+                  passwordField,
+                  const SizedBox(height: 15),
+                  confirmPasswordField,
+                  const SizedBox(height: 20),
+                  singUpButton
+                ],
+              ),
+            ),
           ),
         ),
       )),

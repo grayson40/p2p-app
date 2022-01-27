@@ -45,12 +45,13 @@ class _LoginScreenState extends State<LoginScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.mail),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Email",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          )),
+        prefixIcon: Icon(Icons.mail),
+        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        hintText: "Email",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
     );
 
     // Password field
@@ -73,12 +74,13 @@ class _LoginScreenState extends State<LoginScreen> {
       },
       textInputAction: TextInputAction.done,
       decoration: InputDecoration(
-          prefixIcon: Icon(Icons.lock),
-          contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Password",
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          )),
+        prefixIcon: Icon(Icons.lock),
+        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        hintText: "Password",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+      ),
     );
 
     // Login button
@@ -104,12 +106,12 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       // backgroundColor: Colors.white,
       body: Center(
-          child: SingleChildScrollView(
-        child: Container(
-          // color: Colors.white,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(36, 0, 36, 36),
-            child: Form(
+        child: SingleChildScrollView(
+          child: Container(
+            // color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(36, 0, 36, 36),
+              child: Form(
                 key: _formKey,
                 child: Center(
                   child: Column(
@@ -154,10 +156,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       )
                     ],
                   ),
-                )),
+                ),
+              ),
+            ),
           ),
         ),
-      )),
+      ),
     );
   }
 
