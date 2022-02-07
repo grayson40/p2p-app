@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:p2p_app/screens/init_screen.dart';
 import 'package:p2p_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(primarySwatch: Colors.green),
             darkTheme: ThemeData.dark(),
             themeMode: currentMode,
-            home: const LoginScreen(),
+            home: const Init(),
           );
         });
   }
