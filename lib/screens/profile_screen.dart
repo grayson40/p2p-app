@@ -33,79 +33,111 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
         leading: IconButton(
-          alignment: Alignment.topRight,
           icon: const Icon(
-            Icons.settings,
-            color: Colors.green,
+            Icons.arrow_back,
           ),
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => const SettingsScreen()));
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => const Nav()));
           },
         ),
+        title: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const SizedBox(
+                width: 50,
+              ),
+              Text(
+                loggedInUser.username.toString(),
+                style: const TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              IconButton(
+                icon: const Icon(
+                  Icons.settings,
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const SettingsScreen()));
+                },
+              ),
+            ],
+          ),
+        ),
       ),
-      body: SingleChildScrollView(
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 30, 0, 0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const CircleAvatar(
-              backgroundColor: Colors.grey,
-              radius: 70,
-            ),
-            const SizedBox(
-              height: 25,
-            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Row(
+                Column(
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        print('wins tapped');
-                      },
-                      child: const Text(
-                        "Wins: ",
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 20),
+                    const CircleAvatar(
+                      radius: 50,
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      loggedInUser.username.toString(),
+                      style: const TextStyle(
+                        fontSize: 16,
                       ),
                     ),
-                    const SizedBox(
-                      width: 2,
-                    ),
+                    const SizedBox(height: 10),
                     const Text(
-                      "0",
-                      style: TextStyle(fontSize: 20, color: Colors.grey),
+                      'bio/description',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  width: 30,
-                ),
-                Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        print('losses tapped');
-                      },
-                      child: const Text(
-                        "Losses: ",
-                        style: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 20),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: const [
+                    Text(
+                      'followers',
+                      style: TextStyle(
+                        fontSize: 16,
                       ),
                     ),
-                    const SizedBox(
-                      width: 2,
+                    Divider(
+                      height: 20,
+                      thickness: 10,
                     ),
-                    const Text(
-                      "0",
-                      style: TextStyle(fontSize: 20, color: Colors.grey),
+                    Text(
+                      'winnings',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: const [
+                    Text(
+                      'following',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    Divider(
+                      height: 20,
+                      thickness: 10,
+                    ),
+                    Text(
+                      'lost',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
                     ),
                   ],
                 ),
@@ -115,38 +147,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               height: 70,
               thickness: 2,
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(50, 0, 0, 0),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      const Icon(Icons.person),
-                      const SizedBox(width: 10),
-                      Text(
-                        loggedInUser.username.toString(),
-                        style: const TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Row(
-                    children: [
-                      const Icon(Icons.email),
-                      const SizedBox(width: 10),
-                      Text(
-                        loggedInUser.email.toString(),
-                        style: const TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
+            const Text(
+              'data',
+              style: TextStyle(
+                fontSize: 16,
               ),
             ),
           ],
