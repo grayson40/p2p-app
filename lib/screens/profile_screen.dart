@@ -47,12 +47,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const SizedBox(
-                width: 50,
+                width: 45,
               ),
               Text(
-                loggedInUser.username.toString(),
+                loggedInUser.username == null
+                    ? ""
+                    : loggedInUser.username.toString(),
                 style: const TextStyle(
-                  fontSize: 20,
+                  fontSize: 22,
                 ),
               ),
               const SizedBox(
@@ -80,6 +82,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     const CircleAvatar(
                       radius: 50,
