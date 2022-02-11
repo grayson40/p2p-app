@@ -12,6 +12,7 @@ class Init extends StatefulWidget {
 class _InitState extends State<Init> {
   @override
   Widget build(BuildContext context) {
+    // Login button
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
@@ -32,6 +33,7 @@ class _InitState extends State<Init> {
       ),
     );
 
+    // Sign up button
     final signUpButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
