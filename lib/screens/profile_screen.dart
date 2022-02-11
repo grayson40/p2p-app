@@ -31,6 +31,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    const titleStyle = TextStyle(
+      fontFamily: 'Montserrat',
+      fontSize: 16,
+      fontWeight: FontWeight.w500,
+    );
+    const numberStyle = TextStyle(
+      fontFamily: 'Montserrat',
+      fontSize: 20,
+      fontWeight: FontWeight.w900,
+    );
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -87,85 +97,80 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     const CircleAvatar(
-                      radius: 50,
+                      radius: 50.0,
+                      backgroundImage: NetworkImage(
+                          'https://lehighsports.com/images/2019/8/28/35_Grayson_Crozier_DSC_0039.jpg?width=300'),
+                      backgroundColor: Colors.transparent,
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 15),
                     Text(
                       loggedInUser.username == null
                           ? ""
                           : loggedInUser.username.toString(),
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontFamily: 'Montserrat',
-                      ),
+                      style: titleStyle,
                     ),
                     const SizedBox(height: 10),
                     const Text(
-                      'bio/description',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    Text(
-                      'followers',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    Divider(
-                      height: 20,
-                      thickness: 10,
-                    ),
-                    Text(
-                      'winnings',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: 'Montserrat',
-                      ),
+                      'Fort Lauderdale, FL',
+                      style: titleStyle,
                     ),
                   ],
                 ),
                 Column(
                   children: const [
                     Text(
-                      'following',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: 'Montserrat',
-                      ),
+                      '0',
+                      style: numberStyle,
+                    ),
+                    Text(
+                      'Followers',
+                      style: titleStyle,
                     ),
                     Divider(
                       height: 20,
-                      thickness: 10,
                     ),
                     Text(
-                      'lost',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: 'Montserrat',
-                      ),
+                      '0',
+                      style: numberStyle,
+                    ),
+                    Text(
+                      'Wins',
+                      style: titleStyle,
+                    ),
+                  ],
+                ),
+                Column(
+                  children: const [
+                    Text(
+                      '0',
+                      style: numberStyle,
+                    ),
+                    Text(
+                      'Following',
+                      style: titleStyle,
+                    ),
+                    Divider(
+                      height: 20,
+                    ),
+                    Text(
+                      '0',
+                      style: numberStyle,
+                    ),
+                    Text(
+                      'Losses',
+                      style: titleStyle,
                     ),
                   ],
                 ),
               ],
             ),
             const Divider(
-              height: 70,
+              height: 50,
               thickness: 2,
             ),
             const Text(
               'data',
-              style: TextStyle(
-                fontSize: 16,
-                fontFamily: 'Montserrat',
-              ),
+              style: titleStyle,
             ),
           ],
         ),
