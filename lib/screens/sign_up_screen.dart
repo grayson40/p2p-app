@@ -174,24 +174,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
           },
         ),
       ),
-      body: Center(
-          child: SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Container(
-          // color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(36, 0, 36, 36),
             child: Form(
               key: _formKey,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   const SizedBox(
-                    height: 150,
+                    height: 180,
                     child: Icon(
                       Icons.align_horizontal_center,
                       color: Colors.green,
-                      size: 70,
+                      size: 80,
                     ),
                   ),
                   emailField,
@@ -201,14 +199,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   passwordField,
                   const SizedBox(height: 15),
                   confirmPasswordField,
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 30),
                   singUpButton
                 ],
               ),
             ),
           ),
         ),
-      )),
+      ),
     );
   }
 
