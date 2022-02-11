@@ -52,36 +52,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 .push(MaterialPageRoute(builder: (context) => const Nav()));
           },
         ),
-        title: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const SizedBox(
-                width: 45,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const SizedBox(
+              width: 45,
+            ),
+            Text(
+              loggedInUser.username == null
+                  ? ""
+                  : loggedInUser.username.toString(),
+              style: const TextStyle(
+                fontSize: 22,
+                fontFamily: 'Montserrat',
               ),
-              Text(
-                loggedInUser.username == null
-                    ? ""
-                    : loggedInUser.username.toString(),
-                style: const TextStyle(
-                  fontSize: 22,
-                  fontFamily: 'Montserrat',
-                ),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.settings,
               ),
-              const SizedBox(
-                width: 20,
-              ),
-              IconButton(
-                icon: const Icon(
-                  Icons.settings,
-                ),
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const SettingsScreen()));
-                },
-              ),
-            ],
-          ),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const SettingsScreen()));
+              },
+            ),
+          ],
         ),
       ),
       body: Padding(
@@ -117,46 +115,66 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ],
                 ),
                 Column(
-                  children: const [
-                    Text(
-                      '0',
-                      style: numberStyle,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        print('followers tapped');
+                      },
+                      child: const Text(
+                        '0',
+                        style: numberStyle,
+                      ),
                     ),
-                    Text(
+                    const Text(
                       'Followers',
                       style: titleStyle,
                     ),
-                    Divider(
+                    const Divider(
                       height: 20,
                     ),
-                    Text(
-                      '0',
-                      style: numberStyle,
+                    GestureDetector(
+                      onTap: () {
+                        print('wins tapped');
+                      },
+                      child: const Text(
+                        '0',
+                        style: numberStyle,
+                      ),
                     ),
-                    Text(
+                    const Text(
                       'Wins',
                       style: titleStyle,
                     ),
                   ],
                 ),
                 Column(
-                  children: const [
-                    Text(
-                      '0',
-                      style: numberStyle,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        print('following tapped');
+                      },
+                      child: const Text(
+                        '0',
+                        style: numberStyle,
+                      ),
                     ),
-                    Text(
+                    const Text(
                       'Following',
                       style: titleStyle,
                     ),
-                    Divider(
+                    const Divider(
                       height: 20,
                     ),
-                    Text(
-                      '0',
-                      style: numberStyle,
+                    GestureDetector(
+                      onTap: () {
+                        print('losses tapped');
+                      },
+                      child: const Text(
+                        '0',
+                        style: numberStyle,
+                      ),
                     ),
-                    Text(
+                    const Text(
                       'Losses',
                       style: titleStyle,
                     ),
