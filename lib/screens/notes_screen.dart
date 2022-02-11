@@ -42,7 +42,13 @@ class _NotesScreenState extends State<NotesScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(Icons.book),
-        title: const Text("Notes"),
+        title: const Text(
+          "Notes",
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'Montserrat',
+          ),
+        ),
       ),
       body: Container(
         padding: const EdgeInsets.fromLTRB(30, 0, 90, 20),

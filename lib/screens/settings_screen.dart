@@ -41,7 +41,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
       ),
       body: const Center(
-        child: Text('Settings'),
+        child: Text(
+          'Settings',
+          style: TextStyle(
+            fontFamily: 'Montserrat',
+          ),
+        ),
       ),
       floatingActionButton: Padding(
         padding: const EdgeInsets.fromLTRB(0, 0, 0, 55),

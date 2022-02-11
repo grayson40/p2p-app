@@ -98,7 +98,11 @@ class _LoginScreenState extends State<LoginScreen> {
           "Login",
           textAlign: TextAlign.center,
           style: TextStyle(
-              color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'Montserrat',
+          ),
         ),
       ),
     );
@@ -147,6 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             child: const Text(
                               "Sign Up",
                               style: TextStyle(
+                                  fontFamily: 'Montserrat',
                                   color: Colors.green,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15),

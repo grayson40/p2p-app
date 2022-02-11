@@ -40,14 +40,22 @@ class _NavState extends State<Nav> {
             icon: Icon(Icons.home),
             title: Text(
               "Home",
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'Montserrat',
+              ),
             ),
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.notes_rounded),
               title: Text(
                 "Notes",
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Montserrat',
+                ),
               )),
           BottomNavigationBarItem(
               icon: Icon(
@@ -55,7 +63,11 @@ class _NavState extends State<Nav> {
               ),
               title: Text(
                 "Account",
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Montserrat',
+                ),
               ))
         ],
         currentIndex: _selectedIndex,

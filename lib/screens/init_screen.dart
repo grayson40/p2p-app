@@ -28,7 +28,7 @@ class _InitState extends State<Init> {
           "Login",
           textAlign: TextAlign.center,
           style: TextStyle(
-              color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+              color: Colors.white, fontSize: 18, fontFamily: 'Montserrat'),
         ),
       ),
     );
@@ -49,7 +49,7 @@ class _InitState extends State<Init> {
           "Sign Up",
           textAlign: TextAlign.center,
           style: TextStyle(
-              color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+              color: Colors.white, fontSize: 18, fontFamily: 'Montserrat'),
         ),
       ),
     );

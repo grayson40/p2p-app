@@ -55,6 +55,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     : loggedInUser.username.toString(),
                 style: const TextStyle(
                   fontSize: 22,
+                  fontFamily: 'Montserrat',
                 ),
               ),
               const SizedBox(
@@ -90,9 +91,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      loggedInUser.username.toString(),
+                      loggedInUser.username == null
+                          ? ""
+                          : loggedInUser.username.toString(),
                       style: const TextStyle(
                         fontSize: 16,
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -100,6 +104,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       'bio/description',
                       style: TextStyle(
                         fontSize: 16,
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                   ],
@@ -111,6 +116,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       'followers',
                       style: TextStyle(
                         fontSize: 16,
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                     Divider(
@@ -121,6 +127,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       'winnings',
                       style: TextStyle(
                         fontSize: 16,
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                   ],
@@ -131,6 +138,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       'following',
                       style: TextStyle(
                         fontSize: 16,
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                     Divider(
@@ -141,6 +149,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       'lost',
                       style: TextStyle(
                         fontSize: 16,
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                   ],
@@ -155,6 +164,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               'data',
               style: TextStyle(
                 fontSize: 16,
+                fontFamily: 'Montserrat',
               ),
             ),
           ],

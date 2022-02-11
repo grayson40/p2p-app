@@ -15,7 +15,7 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   static final ValueNotifier<ThemeMode> themeNotifier =
-      ValueNotifier(ThemeMode.light);
+      ValueNotifier(ThemeMode.dark);
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -25,8 +25,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'P2P App',
-          theme:
-              ThemeData(primarySwatch: Colors.green, fontFamily: 'Montserrat'),
+          theme: ThemeData(primarySwatch: Colors.green),
           darkTheme: ThemeData.dark(),
           themeMode: currentMode,
           home: const Init(),
