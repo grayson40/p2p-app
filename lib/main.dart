@@ -20,16 +20,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<ThemeMode>(
-        valueListenable: themeNotifier,
-        builder: (_, ThemeMode currentMode, __) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: 'P2P App',
-            theme: ThemeData(primarySwatch: Colors.green),
-            darkTheme: ThemeData.dark(),
-            themeMode: currentMode,
-            home: const Init(),
-          );
-        });
+      valueListenable: themeNotifier,
+      builder: (_, ThemeMode currentMode, __) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'P2P App',
+          theme:
+              ThemeData(primarySwatch: Colors.green, fontFamily: 'Montserrat'),
+          darkTheme: ThemeData.dark(),
+          themeMode: currentMode,
+          home: const Init(),
+        );
+      },
+    );
   }
 }
