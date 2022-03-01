@@ -17,6 +17,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
 
+  @override
   void initState() {
     super.initState();
     FirebaseFirestore.instance

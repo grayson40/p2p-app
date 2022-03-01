@@ -45,8 +45,8 @@ class _LoginScreenState extends State<LoginScreen> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.mail),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        prefixIcon: const Icon(Icons.mail),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Email",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
@@ -74,8 +74,8 @@ class _LoginScreenState extends State<LoginScreen> {
       },
       textInputAction: TextInputAction.done,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.lock),
-        contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+        prefixIcon: const Icon(Icons.lock),
+        contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Password",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
@@ -111,56 +111,53 @@ class _LoginScreenState extends State<LoginScreen> {
       // backgroundColor: Colors.white,
       body: Center(
         child: SingleChildScrollView(
-          child: Container(
-            // color: Colors.white,
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(36, 0, 36, 36),
-              child: Form(
-                key: _formKey,
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      const SizedBox(
-                        height: 150,
-                        child: Icon(
-                          Icons.align_horizontal_center,
-                          color: Colors.green,
-                          size: 70,
-                        ),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(36, 0, 36, 36),
+            child: Form(
+              key: _formKey,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    const SizedBox(
+                      height: 150,
+                      child: Icon(
+                        Icons.align_horizontal_center,
+                        color: Colors.green,
+                        size: 70,
                       ),
-                      emailField,
-                      const SizedBox(height: 20),
-                      passwordField,
-                      const SizedBox(height: 20),
-                      loginButton,
-                      const SizedBox(height: 15),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          const Text("Don't have an account? "),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const SignUpScreen()));
-                            },
-                            child: const Text(
-                              "Sign Up",
-                              style: TextStyle(
-                                  fontFamily: 'Montserrat',
-                                  color: Colors.green,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15),
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
+                    ),
+                    emailField,
+                    const SizedBox(height: 20),
+                    passwordField,
+                    const SizedBox(height: 20),
+                    loginButton,
+                    const SizedBox(height: 15),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        const Text("Don't have an account? "),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const SignUpScreen()));
+                          },
+                          child: const Text(
+                            "Sign Up",
+                            style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.green,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15),
+                          ),
+                        )
+                      ],
+                    )
+                  ],
                 ),
               ),
             ),

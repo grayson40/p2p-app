@@ -175,34 +175,32 @@ class _SignUpScreenState extends State<SignUpScreen> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Container(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(36, 0, 36, 36),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  const SizedBox(
-                    height: 180,
-                    child: Icon(
-                      Icons.align_horizontal_center,
-                      color: Colors.green,
-                      size: 80,
-                    ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(36, 0, 36, 36),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                const SizedBox(
+                  height: 180,
+                  child: Icon(
+                    Icons.align_horizontal_center,
+                    color: Colors.green,
+                    size: 80,
                   ),
-                  emailField,
-                  const SizedBox(height: 15),
-                  usernameField,
-                  const SizedBox(height: 15),
-                  passwordField,
-                  const SizedBox(height: 15),
-                  confirmPasswordField,
-                  const SizedBox(height: 30),
-                  singUpButton
-                ],
-              ),
+                ),
+                emailField,
+                const SizedBox(height: 15),
+                usernameField,
+                const SizedBox(height: 15),
+                passwordField,
+                const SizedBox(height: 15),
+                confirmPasswordField,
+                const SizedBox(height: 30),
+                singUpButton
+              ],
             ),
           ),
         ),
